@@ -27,22 +27,22 @@ jobs:
         if: ${{ always() }}
         uses: rtCamp/action-slack-notify@v2
         env:
-          SLACK_CHANNEL: tests
+          SLACK_CHANNEL: 18test
           SLACK_COLOR: '#006400'
           SLACK_ICON: 'https://github.com/rtCamp.png?size=48'
           SLACK_MESSAGE: 'Kubernetes manifests tested successfully!'
           SLACK_TITLE: 'SUCCESS! K8s tests'
-          SLACK_USERNAME: rtCamp
+          SLACK_USERNAME: incoming-webhook
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
 
       - name: Slack Notification on Failure
         if: failure()
         uses: rtCamp/action-slack-notify@v2
         env:
-          SLACK_CHANNEL: tests
+          SLACK_CHANNEL: 18test
           SLACK_COLOR: '#8B0000'
           SLACK_ICON: 'https://github.com/rtCamp.png?size=48'
           SLACK_MESSAGE: 'Failure testing Kubernetes manifests'
           SLACK_TITLE: 'FAILURE! K8s tests'
-          SLACK_USERNAME: rtCamp
+          SLACK_USERNAME: incoming-webhook
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
